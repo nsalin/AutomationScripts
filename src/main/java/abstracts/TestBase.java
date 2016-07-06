@@ -100,56 +100,6 @@ public abstract class TestBase {
             driverLocator.shutDown();
     }
 
-//    @BeforeSuite
-//    public void beforeSuite(ITestContext context) {
-//        String suiteName = context.getSuite().getXmlSuite().getName();
-//        logger.info("Running suite {}", suiteName);
-//    }
-//
-//    @AfterSuite
-//    public void setupAfterSuite(ITestContext context) {
-//        logger.info("Finished SUITE: " + context.getSuite().getXmlSuite().getName());
-//    }
-//
-//    @BeforeTest
-//    public void beforeTest(ITestContext context) {
-//        if (context == null)
-//            return;
-//        logger.info("# Starting TEST: {}", context.getCurrentXmlTest().getName());
-//        serverUrl = System.getProperty("serverToBeTestedUrl",
-//                context.getCurrentXmlTest().getParameter("serverToBeTestedUrl"));
-//        if (serverUrl == null) {
-//            throw new IllegalStateException("No server url has been specified");
-//        }
-//        logger.info("Testing against {}", serverUrl);
-//    }
-//
-//    @AfterTest
-//    public void afterTest(ITestContext context) {
-//        logger.info("# Finished TEST: {}" + context.getCurrentXmlTest().getName());
-//    }
-//
-//    @BeforeMethod
-//    public void beforeMethod(Method method) {
-//        if (method != null)
-//            logger.info("# Starting METHOD: {}", method.getName());
-//        initializeDriver();
-//        openInitialPage();
-//    }
-//
-//    @AfterMethod
-//    public void afterMethod(Method method) {
-//        try {
-//            logger.info("# Finished METHOD: {}", method.getName());
-//            takeScreenshot(method.getName(), System.currentTimeMillis());
-////            saveBrowserLogs();
-//        } catch (Exception e) {
-//            logger.debug("Error after test: {} ", e.getStackTrace());
-//        } finally {
-//            shutdownDriver();
-//        }
-//    }
-
     protected void takeScreenshot(String method, long currentTime) {
         try {
             File screenshot = new File(method + "-" + currentTime + ".png");
